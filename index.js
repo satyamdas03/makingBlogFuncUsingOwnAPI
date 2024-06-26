@@ -38,9 +38,11 @@ let lastId = 3;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//Write your code here//
-
 //CHALLENGE 1: GET All posts
+app.get("/posts", (req, res) => {
+  console.log(posts);
+  res.json(posts);
+})
 
 //CHALLENGE 2: GET a specific post by id
 
@@ -53,3 +55,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.listen(port, () => {
   console.log(`API is running at http://localhost:${port}`);
 });
+
+
+//localhost:3000 --> running the website that is hitting up our api
+//localhost:4000 --> server, where the api request is handled
